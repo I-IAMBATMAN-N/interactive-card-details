@@ -1,0 +1,78 @@
+@font-face {
+  font-family: SpaceGrotesk;
+  src: url(font/SpaceGrotesk-Regular.ttf);
+  /* font-weight: regular; */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: SpaceGrotesk;
+  padding-top: 100px;
+}
+
+.container {
+  width: 900px;
+  aspect-ratio: 16/10;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+}
+
+aside {
+  flex: 0 0 33%;
+  background-color: rgba(0, 128, 128, 0.461);
+
+  position: relative;
+}
+
+aside .card {
+  width: 300px;
+
+  aspect-ratio: 1.8/1;
+
+  border-radius: 5px;
+}
+
+.front-card {
+  background-color: yellow;
+  position: absolute;
+  top: 100px;
+  right: -75px;
+}
+
+.back-card {
+  background-color: red;
+  position: absolute;
+  bottom: 100px;
+  right: -120px;
+}
+
+article {
+  flex: 1 0;
+  border: solid 1px black;
+  display: flex;
+}
+
+article form {
+  background-color: red;
+
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+article form input {
+  font-size: 20px;
+}
+
+article form label {
+  display: block;
+}
