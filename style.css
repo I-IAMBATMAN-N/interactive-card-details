@@ -268,7 +268,7 @@ article form button :hover {
     top: auto;
   }
   .back-card {
-    transform: translate(-30%, 0);
+    transform: translate(-40%, 0);
     z-index: -1;
   }
   .rest-inputs {
