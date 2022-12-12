@@ -247,7 +247,7 @@ article form button :hover {
   .form-side {
     /* z-index: -3; */
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     padding-bottom: 4.8rem;
   }
   article form {
