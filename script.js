@@ -22,9 +22,11 @@ const cardNumberArr = Array.from(JSON.stringify(cardNumber.innerText)).slice(
   -1
 );
 
+const inputs = document.querySelectorAll("form input");
+
 for (let i = 0; i < cardNumberArr.length; i++) {}
-console.log("cna");
-console.log(cardNumberArr);
+// console.log("cna");
+// console.log(cardNumberArr);
 
 let numberInputValue = "";
 let numberInputValueArr = [];
@@ -105,23 +107,17 @@ inputNumber.addEventListener("input", function (event) {
 });
 
 inputNumber.addEventListener("keydown", function (event) {
-  console.log(event.key);
+  // console.log(event.key);
   if (event.key === "Backspace") {
     if (numberInputValueArr[numberInputValueArr.length - 1] === " ") {
       numberInputValueArr = numberInputValueArr.slice(0, -1);
-      // let arr = inputNumber.value.slice(0, inputNumber.value.length);
-      // let str = "";
-      // // arr.forEach((el) => {
-      // //   str += el;
-      // // });
-      // // inputNumber.value = Number(arr);
-      // inputNumber.value = inputNumber.value.trim();
-      console.log(numberInputValueArr);
+
+      // console.log(numberInputValueArr);
       cardNumberRefresh();
-      console.log(
-        "substr",
-        inputNumber.value.substr(0, inputNumber.value.length - 1)
-      );
+      // console.log(
+      //   "substr",
+      //   inputNumber.value.substr(0, inputNumber.value.length - 1)
+      // );
       inputNumber.value = inputNumber.value.substr(
         0,
         inputNumber.value.length - 1
@@ -139,7 +135,6 @@ inputNumber.addEventListener("keydown", function (event) {
 
 inputMonth.addEventListener("input", function () {
   if (inputMonth.value.length === 0) {
-    console.log("olalaaaa");
     cardMonth.innerHTML = "00";
   } else {
     const month = inputMonth.value;
@@ -166,3 +161,33 @@ inputCvc.addEventListener("input", function () {
 });
 // Card Year Input
 //////////////////////////////////////////////////////
+
+const confirmButton = document.querySelector("article form button");
+const thankYouSection = document.querySelector(".thank-you");
+
+let elArr = [form, thankYouSection];
+
+confirmButton.addEventListener("click", function () {
+  let bool = true;
+
+  if (inputs[0].length < 5) {
+    bool = false;
+  }
+  for (let i = 1; i < inputs.length; i++) {
+    // console.log(inputs[i].maxLength);
+    if (
+      inputs[i].value.length < inputs[i].maxLength ||
+      inputs[i].value.length > inputs[i].maxLength
+    ) {
+      bool = false;
+    }
+  }
+  //
+  if (bool) {
+    elArr.forEach((element) => {
+      element.classList.toggle("d-none");
+    });
+  } else if (!bool) {
+    alert("Please, fill all inputs correctly first");
+  }
+});

@@ -58,14 +58,14 @@
               <input
                 type="number"
                 class="exp-date-input input-month"
-                placeholder="MM"
-                maxlength="2"
+                placeholder="12"
+                max="2"
               />
               <input
                 type="number"
                 class="exp-date-input input-year"
                 placeholder="YY"
-                maxlength="2"
+                max="50"
               />
             </section>
             <section class="cvc-inputs">
@@ -74,12 +74,17 @@
                 type="number"
                 class="cvc"
                 placeholder="e.g. 123"
-                maxlength="3"
+                max="999"
               />
             </section>
           </section>
           <button>Confirm</button>
         </form>
+        <section class="thank-you d-none">
+          <p class="checked-img">✔</p>
+          <h1 class="heading-1">THANK YOU!</h1>
+          <p class="text">We've added your card details</p>
+        </section>
       </article>
     </div>
   </body>
