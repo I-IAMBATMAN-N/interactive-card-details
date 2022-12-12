@@ -279,3 +279,8 @@ article form button :hover {
     justify-content: center;
   }
 }
+@media (max-width: 350px) {
+  html {
+    font-size: 50%;
+  }
+}
