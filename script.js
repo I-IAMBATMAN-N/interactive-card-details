@@ -175,10 +175,7 @@ confirmButton.addEventListener("click", function () {
   }
   for (let i = 1; i < inputs.length; i++) {
     // console.log(inputs[i].maxLength);
-    if (
-      inputs[i].value.length < inputs[i].maxLength ||
-      inputs[i].value.length > inputs[i].maxLength
-    ) {
+    if (inputs[i].value.length < inputs[i].maxLength) {
       bool = false;
     }
   }
