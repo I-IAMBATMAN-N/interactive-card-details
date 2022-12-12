@@ -239,10 +239,10 @@ article form button :hover {
     min-height: 100vh;
   }
   .card-side {
-    z-index: -2;
+    z-index: 0;
   }
   .form-side {
-    z-index: -3;
+    /* z-index: -3; */
     justify-content: center;
     padding-top: 10rem;
   }
