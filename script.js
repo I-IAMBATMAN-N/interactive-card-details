@@ -90,7 +90,7 @@ inputName.addEventListener("input", function () {
 
 // Card Number Input
 //////////////////////////////////////////////////////
-inputNumber.addEventListener("input", function () {
+inputNumber.addEventListener("input", function (event) {
   if (
     inputNumber.value.length === 4 ||
     inputNumber.value.length === 9 ||
@@ -102,6 +102,36 @@ inputNumber.addEventListener("input", function () {
   const arr = numberInputValue.slice(1, -1);
   numberInputValueArr = [...arr];
   cardNumberRefresh();
+});
+
+inputNumber.addEventListener("keydown", function (event) {
+  console.log(event.key);
+  if (event.key === "Backspace") {
+    if (numberInputValueArr[numberInputValueArr.length - 1] === " ") {
+      numberInputValueArr = numberInputValueArr.slice(0, -1);
+      // let arr = inputNumber.value.slice(0, inputNumber.value.length);
+      // let str = "";
+      // // arr.forEach((el) => {
+      // //   str += el;
+      // // });
+      // // inputNumber.value = Number(arr);
+      // inputNumber.value = inputNumber.value.trim();
+      console.log(numberInputValueArr);
+      cardNumberRefresh();
+      console.log(
+        "substr",
+        inputNumber.value.substr(0, inputNumber.value.length - 1)
+      );
+      inputNumber.value = inputNumber.value.substr(
+        0,
+        inputNumber.value.length - 1
+      );
+    }
+  }
+  // console.log(numberInputValueArr);
+  // if(){
+
+  // }
 });
 
 // Card Month Input
