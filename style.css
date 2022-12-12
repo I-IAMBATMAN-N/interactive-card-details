@@ -240,11 +240,13 @@ article form button :hover {
   }
   .card-side {
     z-index: 0;
+    border-radius: 0px;
   }
   .form-side {
     /* z-index: -3; */
     justify-content: center;
-    padding-top: 10rem;
+    align-items: flex-end;
+    padding-bottom: 4.8rem;
   }
   article form {
     margin: 0;
@@ -255,15 +257,17 @@ article form button :hover {
   article form input {
     height: 3.6rem;
   }
+  aside .card {
+    left: 50%;
+  }
   .front-card {
-    left: 45%;
-    bottom: -50%;
-    transform: translate(-50%, 60%);
+    position: absolute;
+    top: 15rem;
+    transform: translate(-60%, 0);
   }
   .back-card {
-    left: 55%;
-    transform: translate(-50%, 0);
     z-index: -1;
+    transform: translate(-30%, 0);
   }
   .rest-inputs {
     gap: 0;
