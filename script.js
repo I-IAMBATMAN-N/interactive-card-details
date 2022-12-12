@@ -57,7 +57,6 @@ function cardNumberRefresh() {
     }
 
     let str = "";
-
     cardNumberArr.forEach((e) => {
       str += e;
     });
@@ -65,6 +64,8 @@ function cardNumberRefresh() {
     cardNumber.innerText = str;
   }
 }
+
+function cardInputChecker() {}
 
 // INPUT EVENT LISTENERS
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,6 +91,13 @@ inputName.addEventListener("input", function () {
 // Card Number Input
 //////////////////////////////////////////////////////
 inputNumber.addEventListener("input", function () {
+  if (
+    inputNumber.value.length === 4 ||
+    inputNumber.value.length === 9 ||
+    inputNumber.value.length === 14
+  ) {
+    inputNumber.value += " ";
+  }
   numberInputValue = JSON.stringify(inputNumber.value);
   const arr = numberInputValue.slice(1, -1);
   numberInputValueArr = [...arr];
