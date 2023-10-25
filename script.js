@@ -74,7 +74,7 @@ function cardInputChecker() {}
 
 // Card Name Input
 //////////////////////////////////////////////////////
-inputName.addEventListener("input", function () {
+inputName.addEventListener("input", function (e) {
   cardName.innerText = "";
   if (inputName.value.length === 0) {
     cardName.innerText = "";
@@ -107,7 +107,6 @@ inputNumber.addEventListener("input", function (event) {
 });
 
 inputNumber.addEventListener("keydown", function (event) {
-  // console.log(event.key);
   if (event.key === "Backspace") {
     if (numberInputValueArr[numberInputValueArr.length - 1] === " ") {
       numberInputValueArr = numberInputValueArr.slice(0, -1);
@@ -165,26 +164,37 @@ inputCvc.addEventListener("input", function () {
 const confirmButton = document.querySelector("article form button");
 const thankYouSection = document.querySelector(".thank-you");
 
+const regExpNum = /[0-9]/;
+const regExpStr = /[a-zA-Z]/;
+
 let elArr = [form, thankYouSection];
 
 confirmButton.addEventListener("click", function () {
-  let bool = true;
-
-  if (inputs[0].length < 5) {
-    bool = false;
-  }
-  for (let i = 1; i < inputs.length; i++) {
-    // console.log(inputs[i].maxLength);
-    if (inputs[i].value.length < inputs[i].maxLength) {
-      bool = false;
-    }
-  }
   //
-  if (bool) {
+  const incorrectFields = [];
+
+  if (regExpNum.test(inputName.value)) {
+    incorrectFields.push("Card name");
+  }
+  if (regExpStr.test(inputNumber.value)) {
+    incorrectFields.push("Card number");
+  }
+  if (regExpStr.test(inputMonth.value)) {
+    incorrectFields.push("Card month");
+  }
+  if (regExpStr.test(inputYear.value)) {
+    incorrectFields.push("Card year");
+  }
+  if (regExpStr.test(inputCvc.value)) {
+    incorrectFields.push("Card cvc");
+  }
+
+  if (incorrectFields.length) {
+    alert(`Please fill corectly fields:\n${[...incorrectFields]}`);
+  } else if (!incorrectFields.length) {
+    //
     elArr.forEach((element) => {
       element.classList.toggle("d-none");
     });
-  } else if (!bool) {
-    alert("Please, fill all inputs correctly first");
   }
 });
