@@ -31,8 +31,9 @@ html {
 body {
   display: flex;
   font-family: SpaceGrotesk;
-  padding-top: 100px;
   font-size: 1.8rem;
+
+  height: 100vh;
 }
 .container {
   width: 100%;
@@ -40,8 +41,7 @@ body {
   max-height: 60rem;
   height: 100vh;
   /* aspect-ratio: 16/10; */
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   display: flex;
 }
 .d-none {
@@ -149,8 +149,9 @@ article.form-side {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top-right-radius: 0.1rem;
-  border-bottom-right-radius: 0.1rem;
+
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 article form {
   width: 46%;
