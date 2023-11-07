@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* 
 ## Colors
 
@@ -22,6 +29,7 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -29,6 +37,8 @@ html {
   font-size: 62.7%;
 }
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-family: SpaceGrotesk;
   font-size: 1.8rem;
@@ -42,6 +52,8 @@ body {
   height: 100vh;
   /* aspect-ratio: 16/10; */
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .d-none {
@@ -58,7 +70,17 @@ body {
   color: hsl(279, 6%, 55%);
 }
 aside {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 30%;
   flex: 0 0 30%;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(hsl(249, 99%, 64%)),
+    to(hsl(278, 94%, 30%))
+  );
+  background-image: -o-linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
   background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
   position: relative;
   border-top-left-radius: 10px;
@@ -68,9 +90,18 @@ aside .card {
   width: 28rem;
   aspect-ratio: 1.8/1;
   border-radius: 5px;
+  -webkit-box-shadow: 0.5rem 0.5rem 1.1rem 0.2rem rgba(103, 102, 102, 0.26);
   box-shadow: 0.5rem 0.5rem 1.1rem 0.2rem rgba(103, 102, 102, 0.26);
 }
 .front-card {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(hsl(278, 94%, 30%)),
+    to(hsl(249, 99%, 64%))
+  );
+  background-image: -o-linear-gradient(hsl(278, 94%, 30%), hsl(249, 99%, 64%));
   background-image: linear-gradient(hsl(278, 94%, 30%), hsl(249, 99%, 64%));
   color: white;
   position: absolute;
@@ -86,7 +117,11 @@ aside .card {
 }
 .logo-container {
   height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
@@ -110,7 +145,11 @@ aside .card {
   margin-bottom: 15px;
 }
 .card-bottom-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .card-holder-name,
@@ -129,12 +168,18 @@ aside .card {
   width: 90%;
   height: 2.4rem;
   background-color: hsl(210, 10.8%, 71%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: end;
   margin-left: auto;
   margin-right: auto;
   border-radius: 3px;
   font-size: 10px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 0 10px;
   letter-spacing: 1px;
@@ -144,10 +189,18 @@ aside .card {
   background-color: grey;
 }
 article.form-side {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0;
   flex: 1 0;
   background-color: hsl(0, 0%, 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
   border-top-right-radius: 10px;
@@ -195,15 +248,33 @@ article form input:active {
 article form input:invalid {
   border: 1px solid hsl(0, 100%, 66%);
 }
+article form input::-webkit-input-placeholder {
+  color: hsl(279, 6%, 55%);
+}
+article form input::-moz-placeholder {
+  color: hsl(279, 6%, 55%);
+}
+article form input:-ms-input-placeholder {
+  color: hsl(279, 6%, 55%);
+}
+article form input::-ms-input-placeholder {
+  color: hsl(279, 6%, 55%);
+}
 article form input::placeholder {
   color: hsl(279, 6%, 55%);
 }
 .rest-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .rest-inputs section {
   display: inline-block;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 46%;
   flex: 0 0 46%;
 }
 .exp-date-inputs {
@@ -225,8 +296,14 @@ article form button {
   letter-spacing: 1px;
   cursor: pointer;
   padding: 2.4rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 article form button :hover {
@@ -243,8 +320,15 @@ article form button :hover {
   width: 46%;
 }
 .thank-you {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 1.8rem;
 }
@@ -253,10 +337,24 @@ article form button :hover {
   color: hsl(0, 0%, 100%);
   height: 7rem;
   width: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 50%;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(hsl(278, 94%, 30%)),
+    to(hsl(249, 99%, 64%))
+  );
+  background-image: -o-linear-gradient(hsl(278, 94%, 30%), hsl(249, 99%, 64%));
   background-image: linear-gradient(hsl(278, 94%, 30%), hsl(249, 99%, 64%));
 }
 @media (max-width: 750px) {
@@ -264,6 +362,9 @@ article form button :hover {
     padding-top: 0;
   }
   .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
@@ -272,11 +373,17 @@ article form button :hover {
     z-index: 0;
     border-radius: 0px;
     width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 250px;
     flex: 0 0 250px;
   }
   .form-side {
     /* z-index: -3; */
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding-bottom: 4.8rem;
   }
@@ -293,11 +400,15 @@ article form button :hover {
     left: 50%;
   }
   .front-card {
+    -webkit-transform: translate(-60%, 0);
+    -ms-transform: translate(-60%, 0);
     transform: translate(-60%, 0);
     bottom: -3.2rem;
     top: auto;
   }
   .back-card {
+    -webkit-transform: translate(-40%, 0);
+    -ms-transform: translate(-40%, 0);
     transform: translate(-40%, 0);
     z-index: -1;
   }
@@ -305,7 +416,11 @@ article form button :hover {
     gap: 0;
   }
   .rest-inputs section {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0;
     flex: 1 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 }
