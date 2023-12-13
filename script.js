@@ -202,26 +202,44 @@ confirmButton.addEventListener("click", function () {
   //
   const incorrectFields = [];
 
-  // if (regExpNum.test(inputName.value)) {
-  //   incorrectFields.push("Card name");
-  // }
-  // if (regExpStr.test(inputNumber.value) || regExpStr2.test(inputNumber.value)) {
-  //   incorrectFields.push("Card number");
-  // }
-  // if (regExpStr.test(inputMonth.value) || regExpStr2.test(inputMonth.value)) {
-  //   incorrectFields.push("Card month");
-  // }
-  // if (regExpStr.test(inputYear.value) || regExpStr2.test(inputYear.value)) {
-  //   incorrectFields.push("Card year");
-  // }
-  // if (regExpStr.test(inputCvc.value) || regExpStr2.test(inputCvc.value)) {
-  //   incorrectFields.push("Card cvc");
-  // }
+  if (regExpNum.test(inputName.value)) {
+    incorrectFields.push("Card name");
+  }
+  if (regExpStr.test(inputNumber.value) || regExpStr2.test(inputNumber.value)) {
+    incorrectFields.push("Card number");
+  }
+  if (regExpStr.test(inputMonth.value) || regExpStr2.test(inputMonth.value)) {
+    incorrectFields.push("Card month");
+  }
+  if (regExpStr.test(inputYear.value) || regExpStr2.test(inputYear.value)) {
+    incorrectFields.push("Card year");
+  }
+  if (regExpStr.test(inputCvc.value) || regExpStr2.test(inputCvc.value)) {
+    incorrectFields.push("Card cvc");
+  }
 
-  if (incorrectFields.length) {
+  let bool = true;
+
+  inputs.forEach((input) => {
+    const min = input.getAttribute("minlength");
+
+    if (min) {
+      if (input.value.length < min) {
+        bool = false;
+      }
+    } else if (!min) {
+      if (!input.value.length) {
+        bool = false;
+      }
+    }
+  });
+
+  if (!bool) alert("Please fill inputs first");
+
+  if (incorrectFields.length)
     alert(`Please fill corectly fields:\n${[...incorrectFields]}`);
-  } else if (!incorrectFields.length) {
-    //
+
+  if (bool && !incorrectFields.length) {
     elArr.forEach((element) => {
       element.classList.toggle("d-none");
     });
